@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import shapiro
+import scipy.stats as stats
 
 def iqr_function(df,replacement_value):
     for column in df.columns:
@@ -27,6 +27,16 @@ table2 = data.iloc[:, 3:8]
 
 table3 = data.iloc[1:, 8:]
 
+#vel data test
+vel_20 = data.iloc[1:, 10:11]
+
+hours_table = data.iloc[1:, 2:3]
+
+#hours data table
+hours_table = hours_table.stack()
+vel_20 = vel_20.stack()
+
+
 # raw data table
 table_raw = table3.stack()
 
@@ -50,4 +60,10 @@ plt.hist(table_outliers,alpha=0.8,edgecolor='black', color='darkgreen',label='IQ
 plt.legend()
 plt.show()
 
+
+# # Pearson test
+# corr, p_value = stats.pearsonr(vel_20, hours_table)
+
+# print("Coeficiente de correlación de Pearson:", corr)
+# print("Valor p:", p_value)
 
