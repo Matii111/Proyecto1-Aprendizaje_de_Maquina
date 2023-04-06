@@ -51,10 +51,3 @@ plt.legend()
 plt.show()
 
 
-### shapiro-wilk test
-# stat, p = shapiro(table_outliers)
-# alpha = 0.05 
-# if p > alpha:
-#     print('The data is likely normally distributed (fail to reject H0)')
-# else:
-#     print('The data is likely not normally distributed (reject H0)')
